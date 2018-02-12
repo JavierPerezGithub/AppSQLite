@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">AppSQLite</string>
+    <string name="insertar">insertar contacto</string>
+    <string name="consultar">consultar contacto</string>
+</resources>
