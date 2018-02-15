@@ -15,12 +15,23 @@ import java.util.ArrayList;
  * Created by 21650521 on 12/02/2018.
  */
 
-public class Adapter extends RecyclerView.Adapter<Adapter.VHContacto> {
+public class Adapter extends RecyclerView.Adapter<Adapter.VHContacto> implements View.OnClickListener {
 
     private ArrayList<Contacto> datos;
+    private View.OnClickListener listener;
 
     public Adapter(ArrayList<Contacto> datos){
         this.datos = datos;
+    }
+
+    @Override
+    public void onClick(View v) {
+        if(listener !=null){
+            listener.onClick(v);
+        }
+    }
+    public void setOnClickListener(View.OnClickListener listener){
+        this.listener = listener;
     }
     public static class VHContacto extends RecyclerView.ViewHolder{
         private TextView tvNombre;

@@ -29,6 +29,13 @@ public class MainActivity extends AppCompatActivity {
         cds = new ContactosDatasource(this);
         listaContactos = new ArrayList<Contacto>();
         cargarRecyclerView();
+        ad.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Contacto c = listaContactos.get(rv.getChildAdapterPosition(v));
+                Toast.makeText(MainActivity.this, "", Toast.LENGTH_SHORT).show();
+            }
+        });
 
     }
 
@@ -50,7 +57,6 @@ public class MainActivity extends AppCompatActivity {
         }else{
             cargarRecyclerView();
         }
-
     }
 
     public void insertar(View v){
