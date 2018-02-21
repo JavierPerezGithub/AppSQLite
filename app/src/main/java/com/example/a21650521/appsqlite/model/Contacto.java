@@ -12,6 +12,9 @@ public class Contacto implements Serializable {
     private String nombre;
     private String email;
 
+    public Contacto() {
+    }
+
     public Contacto(String nombre, String email) {
         this.id = -1;
         this.nombre = nombre;

@@ -29,13 +29,6 @@ public class MainActivity extends AppCompatActivity {
         cds = new ContactosDatasource(this);
         listaContactos = new ArrayList<Contacto>();
         cargarRecyclerView();
-        ad.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Contacto c = listaContactos.get(rv.getChildAdapterPosition(v));
-                Toast.makeText(MainActivity.this, "", Toast.LENGTH_SHORT).show();
-            }
-        });
 
     }
 
@@ -46,6 +39,16 @@ public class MainActivity extends AppCompatActivity {
         rv.setLayoutManager(llm);
 
         ad = new Adapter(listaContactos);
+        ad.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Contacto c = listaContactos.get(rv.getChildAdapterPosition(v));
+                Intent intent = new Intent(MainActivity.this,SeleccionActivity.class);
+                Long id = c.getId();
+                intent.putExtra("ID",id);
+                startActivity(intent);
+            }
+        });
         rv.setAdapter(ad);
     }
 

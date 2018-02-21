@@ -56,6 +56,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.VHContacto> implements
     public VHContacto onCreateViewHolder(ViewGroup parent, int viewType) {
         View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_contacto,parent,false);
         VHContacto vhc = new VHContacto(v);
+        v.setOnClickListener(this);
         return vhc;
     }
 
