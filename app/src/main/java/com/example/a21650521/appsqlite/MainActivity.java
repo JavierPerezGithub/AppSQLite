@@ -33,12 +33,21 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void cargarRecyclerView() {
-        rv.setHasFixedSize(true);
 
+        rv.setHasFixedSize(true);
         llm = new LinearLayoutManager(this);
         rv.setLayoutManager(llm);
-
         ad = new Adapter(listaContactos);
+
+        ad.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Contacto contacto = listaContactos.get(rv.getChildAdapterPosition(v));
+                Intent intent = new Intent(MainActivity.this,BorrarActualizarActivity.class);
+                intent.putExtra("CONTACTO",contacto);
+                startActivity(intent);
+            }
+        });
         rv.setAdapter(ad);
     }
 
@@ -50,7 +59,6 @@ public class MainActivity extends AppCompatActivity {
         }else{
             cargarRecyclerView();
         }
-
     }
 
     public void insertar(View v){

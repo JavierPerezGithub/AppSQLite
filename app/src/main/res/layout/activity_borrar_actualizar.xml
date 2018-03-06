@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.a21650521.appsqlite.BorrarActualizarActivity">
+    <EditText
+        android:id="@+id/detaNombre"
+        android:layout_width="wrap_content"
+        android:textSize="40dp"
+        android:layout_height="wrap_content" />
+    <EditText
+        android:id="@+id/detaEmail"
+        android:paddingTop="10dp"
+        android:layout_width="wrap_content"
+        android:textSize="40dp"
+        android:layout_height="wrap_content" />
+    <LinearLayout
+        android:layout_marginTop="25dp"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/btnBorrar"
+            android:text="Borrar"
+            android:onClick="borrar"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/btnActualizar"
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:onClick="actualizar"
+            android:text="Actualizar" />
+
+    </LinearLayout>
+</LinearLayout>
