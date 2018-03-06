@@ -29,7 +29,6 @@ public class MainActivity extends AppCompatActivity {
         cds = new ContactosDatasource(this);
         listaContactos = new ArrayList<Contacto>();
         cargarRecyclerView();
-
     }
 
     private void cargarRecyclerView() {
@@ -59,7 +58,6 @@ public class MainActivity extends AppCompatActivity {
         }else{
             cargarRecyclerView();
         }
-
     }
 
     public void insertar(View v){
