@@ -105,12 +105,12 @@ public class ContactosDatasource {
         SQLiteDatabase database = openReadable();
 
         Contacto contacto = null;
-        String sentencia = "SELECT"
+        String sentencia = "SELECT "
                 + ContactosDBContract.ContactoEntry.COLUMN_ID + ", "
                 + ContactosDBContract.ContactoEntry.COLUMN_NAME + ", "
                 + ContactosDBContract.ContactoEntry.COLUMN_MAIL
-                + "FROM contactos WHERE "
-                + ContactosDBContract.ContactoEntry.COLUMN_ID + " = "
+                + " FROM contactos WHERE "
+                + ContactosDBContract.ContactoEntry.COLUMN_ID + "="
                 + idContacto;
 
         Cursor miCursor = database.rawQuery(sentencia, null);

@@ -59,6 +59,7 @@ public class MainActivity extends AppCompatActivity {
         }else{
             cargarRecyclerView();
         }
+
     }
 
     public void insertar(View v){
